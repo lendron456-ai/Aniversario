@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Para Mi Amorcito, Carlos</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Fondo de estrellas -->
+    <canvas id="stars-canvas"></canvas>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Primer Aniversario</p>
+        <h1 id="hero-title">Para Mi Amorcito</h1>
+        <p class="hero-msg" id="hero-msg">
+          Mi vida, hoy celebramos un año entero amándonos. <br />
+          Un año de risas, abrazos y de descubrir que contigo todo es mejor.
+        </p>
+        <blockquote class="hero-quote" id="hero-quote">
+          "Eres mi persona favorita, mi paz y mi mayor aventura."
+        </blockquote>
+        <button class="btn-letter" onclick="abrirCarta()">
+          Leer Mi Carta ✉
+        </button>
+      </div>
+    </section>
+
+    <!-- CARRUSEL -->
+    <div class="carousel-wrap">
+      <div class="carousel" id="carousel">
+        <div class="carousel-track" id="carousel-track">
+          <div class="carousel-slide">
+            <div class="card-bg">
+              <img src="images/1.jpeg" alt="Momento 1" />
+            </div>
+            <!-- <span class="slide-caption">Momento 1</span> -->
+          </div>
+          <div class="carousel-slide">
+            <div class="card-bg">
+              <img src="images/2.jpeg" alt="Momento 2" />
+            </div>
+            <!-- <span class="slide-caption">Momento 2</span> -->
+          </div>
+          <div class="carousel-slide">
+            <div class="card-bg">
+              <img src="images/3.jpeg" alt="Momento 3" />
+            </div>
+            <!-- <span class="slide-caption">Momento 3</span> -->
+          </div>
+          <div class="carousel-slide">
+            <div class="card-bg">
+              <img src="images/4.jpeg" alt="Momento 4" />
+            </div>
+            <!-- <span class="slide-caption">Momento 4</span> -->
+          </div>
+          <div class="carousel-slide">
+            <div class="card-bg">
+              <img src="images/5.jpeg" alt="Momento 5" />
+            </div>
+            <!-- <span class="slide-caption">Momento 5</span> -->
+          </div>
+          <div class="carousel-slide">
+            <div class="card-bg">
+              <img src="images/6.jpg" alt="Momento 6" />
+            </div>
+            <!-- <span class="slide-caption">Momento 6</span> -->
+          </div>
+          <div class="carousel-slide">
+            <div class="card-bg">
+              <img src="images/7.jpeg" alt="Momento 7" />
+            </div>
+            <!-- <span class="slide-caption">Momento 7</span> -->
+          </div>
+          <div class="carousel-slide">
+            <div class="card-bg">
+              <img src="images/8.jpeg" alt="Momento 8" />
+            </div>
+            <!-- <span class="slide-caption">Momento 8</span> -->
+          </div>
+          <div class="carousel-slide">
+            <div class="card-bg">
+              <img src="images/9.jpeg" alt="Momento 9" />
+            </div>
+            <!-- <span class="slide-caption">Momento 9</span> -->
+          </div>
+          <div class="carousel-slide">
+            <div class="card-bg">
+              <img src="images/10.jpeg" alt="Momento 10" />
+            </div>
+            <!-- <span class="slide-caption">Momento 10</span> -->
+          </div>
+          <div class="carousel-slide">
+            <div class="card-bg">
+              <img src="images/11.jpeg" alt="Momento 11" />
+            </div>
+            <!-- <span class="slide-caption">Momento 11</span> -->
+          </div>
+          <div class="carousel-slide">
+            <div class="card-bg">
+              <img src="images/12.jpeg" alt="Momento 12" />
+            </div>
+            <!-- <span class="slide-caption">Momento 12</span> -->
+          </div>
+        </div>
+        <div class="carousel-arrows">
+          <button
+            class="carousel-arrow left"
+            aria-label="Anterior"
+            onclick="prevSlide()"
+          >
+            &#8592;
+          </button>
+          <button
+            class="carousel-arrow right"
+            aria-label="Siguiente"
+            onclick="nextSlide()"
+          >
+            &#8594;
+          </button>
+        </div>
+      </div>
+      <div class="dots" id="dots">
+        <div class="dot active" onclick="goSlide(0)"></div>
+        <div class="dot" onclick="goSlide(1)"></div>
+        <div class="dot" onclick="goSlide(2)"></div>
+        <div class="dot" onclick="goSlide(3)"></div>
+        <div class="dot" onclick="goSlide(4)"></div>
+        <div class="dot" onclick="goSlide(5)"></div>
+        <div class="dot" onclick="goSlide(6)"></div>
+        <div class="dot" onclick="goSlide(7)"></div>
+        <div class="dot" onclick="goSlide(8)"></div>
+        <div class="dot" onclick="goSlide(9)"></div>
+        <div class="dot" onclick="goSlide(10)"></div>
+        <div class="dot" onclick="goSlide(11)"></div>
+      </div>
+    </div>
+
+    <!-- MODAL CARTA -->
+    <div class="modal-overlay" id="modal">
+      <div class="modal-box">
+        <button class="modal-close" onclick="cerrarCarta()">✕</button>
+        <h2>Carta de Mi Corazón</h2>
+        <p id="carta-texto">
+          Mi Carlos, mi amorcito, mi vida, mi corazon<br /><br />
+
+          Hoy se cumple exactamente un año desde que empezaste a formar parte de
+          mi vida… y qué año tan hermoso ha sido.<br /><br />
+
+          Contigo he aprendido que el amor de verdad es tranquilo y emocionante
+          al mismo tiempo. Me has enseñado a amar con calma, con respeto y con
+          mucha risa. Gracias por cada mensaje de buenos días, por abrazarme
+          fuerte cuando lo necesito, por mirarme como si fuera lo más bonito del
+          mundo y por quedarte incluso en mis días difíciles.<br /><br />
+
+          Este primer año juntos ha sido lleno de momentos que guardo con mucho
+          cariño: nuestras salidas, las noches hablando de todo y de nada, tus
+          besos, tu forma de cuidarme… Todo eso me ha hecho darme cuenta de que
+          quiero muchos más años a tu lado.<br /><br />
+
+          Prometo seguir eligiendo quererte todos los días, seguir riéndome contigo y construir una historia cada
+          vez más bonita.<br /><br />
+
+          Gracias por ser mi refugio, mi compañero, mi mejor amigo y el amor más bonito que me
+          ha pasado.<br /><br />
+
+          Te amo con todo mi corazón, hoy, mañana y siempre.
+        </p>
+        <p class="modal-sign" id="carta-firma">
+          Con todo mi amor,<br />Leo 🧡💙
+        </p>
+      </div>
+    </div>
+
+    <!-- RECUERDOS (reemplazado por tarjeta de Spotify) -->
+    <!-- <div class="section">
+  <h2 class="section-title">Nuestra Canción</h2>
+  <div class="memories" id="memories">
+    <div class="video-card" id="video-card" aria-live="polite">
+      <div class="video-thumb-wrap">
+        <div id="video-placeholder" class="video-placeholder">Haz clic para seleccionar un video</div>
+        <video id="uploaded-video" controls hidden></video>
+        <button id="video-play" class="video-play-btn" aria-label="Reproducir video">▶</button>
+        <input id="video-input" type="file" accept="video/*" style="display:none">
+      </div>
+      <div class="video-info">
+        <div id="video-filename" class="video-filename">Ningún archivo seleccionado</div>
+        <button id="video-select-btn" class="btn-letter">Seleccionar video</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+    <!-- REPRODUCTOR DE MÚSICA -->
+    <div class="music-section">
+      <p class="music-phrase">Esta es la canción con la que celebro mi amor por ti</p>
+      <div class="music-player">
+        <audio id="love-audio" src="Firstime.mp3" preload="metadata"></audio>
+        <button class="music-btn" id="music-play-btn" onclick="toggleMusic()" aria-label="Reproducir o pausar">
+          <span class="music-icon" id="music-icon">&#9654;</span>
+        </button>
+        <div class="music-info">
+          <div class="music-title">First Time</div>
+          <div class="music-progress-wrap">
+            <div class="music-progress-track">
+              <div class="music-progress-fill" id="music-progress"></div>
+            </div>
+            <span class="music-time" id="music-time">0:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTADOR -->
+    <div class="counter-section">
+      <div class="counter-label-top">El día desde que todo empezó</div>
+      <div class="counter-units">
+        <div class="c-unit">
+          <span class="c-num" id="c-days">0000</span>
+          <div class="c-lbl">DÍAS</div>
+        </div>
+        <span class="c-sep">:</span>
+        <div class="c-unit">
+          <span class="c-num" id="c-hours">00</span>
+          <div class="c-lbl">HORAS</div>
+        </div>
+        <span class="c-sep">:</span>
+        <div class="c-unit">
+          <span class="c-num" id="c-mins">00</span>
+          <div class="c-lbl">MIN</div>
+        </div>
+        <span class="c-sep">:</span>
+        <div class="c-unit">
+          <span class="c-num" id="c-secs">00</span>
+          <div class="c-lbl">SEG</div>
+        </div>
+      </div>
+      <p class="counter-sub">
+        Desde que llegaste a mi vida, todo tiene más sentido y más color.
+      </p>
+    </div>
+
+    <!-- FUTURO -->
+    <div class="future-section">
+      <h2 class="section-title">Nuestro Futuro</h2>
+      <p>
+        Sueño con todo lo que aún nos falta vivir juntos: más viajes, más
+        madrugadas hablando, más logros alcanzados de la mano, más momentos
+        donde solo estemos tú y yo.<br /><br />
+        Quiero seguir creciendo a tu lado, apoyándote en tus sueños como tú
+        apoyas los míos. Quiero hacerte feliz todos los días y que sigamos
+        eligiendo ser el hogar del otro.
+      </p>
+    </div>
+
+    <!-- BARRA DE AMOR -->
+    <div class="love-bar-section">
+      <div class="love-bar-lbl">Nuestro Amor</div>
+      <div class="love-bar-track">
+        <div class="love-bar-fill" id="love-bar"></div>
+      </div>
+      <div class="love-bar-pct">100% Tuyo, siempre</div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-sig" id="footer-sig">
+        Gracias por este primer año tan especial. Eres y serás siempre mi
+        persona favorita.
+      </div>
+      <p style="margin-top: 6px">© 2026 Creado con amor para mi ser amado.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
